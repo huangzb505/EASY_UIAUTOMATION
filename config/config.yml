@@ -1,0 +1,61 @@
+URL: https://www.dinghuo123.com/
+product_env:
+    usr: 310524810
+    pwd: 123456
+test_env:
+    usr: 334483602
+    pwd: 111111
+log:
+    file_name: test.log
+    backup: 5
+    console_level: INFO
+    file_level: DEBUG
+    pattern: '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+mail:
+    server: smtp.qq.com
+    port: 465
+    sender: 1038103831@qq.com
+    password: vpcrprvviobqbcbh
+    receiver: 561211505@qq.com       # 以;号隔开多个收件人
+    title: 测试结果
+    
+ip: 127.0.0.1
+port: 8080
+
+---   # 必须是 3 格, 以下为练习示例
+
+URL: https://sso.dinghuo123.com/
+name:
+     age: 19
+     height: 188
+name:     # 同名的情况下取最后一个name项
+     - age: 18
+     - sexy: M
+
+database:   # c.get('database', 1)["oracle"]["host"]
+
+     oracle:
+
+         host: loacalhost
+
+
+
+         user: root
+
+
+
+         passwd: root
+
+
+
+         db: name2ip
+
+     mysql:
+
+         host: localhost
+
+         user: root
+
+         passwd: root
+
+         db: name2ip
