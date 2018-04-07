@@ -8,7 +8,7 @@ class CreatePromotionTest(BaseTestCase):
     """新增促销"""
 
     def test_sale_with_present(self):
-        """新增买赠"""
+        """新增商品促销买赠"""
         product_pro = PromotionManage(self.driver)
         product_pro.open_promotion_manage()
         product_pro.click_pro_promotion()
@@ -27,7 +27,7 @@ class CreatePromotionTest(BaseTestCase):
         logger.info("成功新增商品促销——买赠")
 
     def test_straight_down(self):
-        """新增直降"""
+        """新增商品促销直降"""
         product_pro = PromotionManage(self.driver)
         product_pro.open_promotion_manage()
         product_pro.click_pro_promotion()
@@ -45,7 +45,7 @@ class CreatePromotionTest(BaseTestCase):
         logger.info("成功新增商品促销——直降")
 
     def test_product_discount(self):
-        """新增打折"""
+        """新增新增商品促销打折"""
         product_pro = PromotionManage(self.driver)
         product_pro.open_promotion_manage()
         product_pro.click_pro_promotion()
@@ -63,7 +63,7 @@ class CreatePromotionTest(BaseTestCase):
         logger.info("成功新增商品促销——打折")
 
     def test_satisfy_gift_ord(self):
-        """新增订单满赠"""
+        """新增订单促销满赠"""
         ord = PromotionManage(self.driver)
         ord.open_promotion_manage()
         ord.click_order_promotion()
@@ -79,7 +79,7 @@ class CreatePromotionTest(BaseTestCase):
         logger.info("成功新增订单促销——满赠")
 
     def test_satisfy_subtract_ord(self):
-        """新增订单满减"""
+        """新增订单促销满减"""
         ord = PromotionManage(self.driver)
         ord.open_promotion_manage()
         ord.click_order_promotion()
@@ -95,7 +95,7 @@ class CreatePromotionTest(BaseTestCase):
         logger.info("成功新增订单促销——满减")
 
     def test_satisfy_discount_ord(self):
-        """新增订单满折"""
+        """新增订单促销满折"""
         ord = PromotionManage(self.driver)
         ord.open_promotion_manage()
         ord.click_order_promotion()
@@ -110,14 +110,13 @@ class CreatePromotionTest(BaseTestCase):
         self.assertEqual(after_add, before_add + 1)
         logger.info("成功新增订单促销——满折")
 
-    def test_sale_present_n(self):
-        """新增买赠"""
+    def test_sale_with_present_c(self):
+        """新增组合促销买赠"""
         gro = PromotionManage(self.driver)
         gro.open_promotion_manage()
-        gro.click_group_promotion()
+        gro.click_combine_promotion()
         before_add = gro.total_strip() if len(gro.checkbox) != 1 else 0
         gro.add()
-        title = gro.gro_title
         gro.promotion_title()
         gro.open_product_list()
         gro.select_product_0910()
@@ -129,17 +128,15 @@ class CreatePromotionTest(BaseTestCase):
         gro.save()
         after_add = gro.total_strip()
         self.assertEqual(after_add, before_add + 1)
-        self.assertTrue(gro.in_pages(title))
         logger.info("成功新增组合促销——买赠")
 
-    def test_straight_down_n(self):
-        """新增直降"""
+    def test_straight_down_c(self):
+        """新增组合促销直降"""
         gro = PromotionManage(self.driver)
         gro.open_promotion_manage()
-        gro.click_group_promotion()
+        gro.click_combine_promotion()
         before_add = gro.total_strip() if len(gro.checkbox) != 1 else 0
         gro.add()
-        title = gro.gro_title
         gro.promotion_title()
         gro.open_product_list()
         gro.select_product_0405()
@@ -151,17 +148,15 @@ class CreatePromotionTest(BaseTestCase):
         gro.save()
         after_add = gro.total_strip()
         self.assertEqual(after_add, before_add + 1)
-        self.assertTrue(gro.in_pages(title))
         logger.info("成功新增组合促销——直降")
 
-    def test_product_discount_n(self):
-        """新增打折"""
+    def test_product_discount_c(self):
+        """新增组合促销打折"""
         gro = PromotionManage(self.driver)
         gro.open_promotion_manage()
-        gro.click_group_promotion()
+        gro.click_combine_promotion()
         before_add = gro.total_strip() if len(gro.checkbox) != 1 else 0
         gro.add()
-        title = gro.gro_title
         gro.promotion_title()
         gro.open_product_list()
         gro.select_product_0607()
@@ -173,7 +168,6 @@ class CreatePromotionTest(BaseTestCase):
         gro.save()
         after_add = gro.total_strip()
         self.assertEqual(after_add, before_add + 1)
-        self.assertTrue(gro.in_pages(title))
         logger.info("成功新增组合促销——打折")
 
 

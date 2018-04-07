@@ -70,7 +70,7 @@ class MenuLoc:
     SMS_set = (By.LINK_TEXT, "短信设置")
     product_promotion = (By.LINK_TEXT, "商品促销")
     order_promotion = (By.LINK_TEXT, "订单促销")
-    group_promotion = (By.LINK_TEXT, "组合促销")
+    combine_promotion = (By.LINK_TEXT, "组合促销")
     seckill_manage = (By.LINK_TEXT, "秒杀管理")
     big_wheel = (By.LINK_TEXT, "大转盘")
 

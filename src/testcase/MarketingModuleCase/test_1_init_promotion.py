@@ -26,7 +26,7 @@ class InitPromotionTacticsTest(BaseTestCase):
         """批量作废组合促销"""
         gro = PromotionManage(self.driver)
         gro.open_promotion_manage()
-        gro.click_group_promotion()
+        gro.click_combine_promotion()
         if len(gro.checkbox) > 1:
             gro.select_all()
             gro.cancel_all()
@@ -68,7 +68,7 @@ class InitPromotionTacticsTest(BaseTestCase):
         """批量删除组合促销"""
         gro = PromotionManage(self.driver)
         gro.open_promotion_manage()
-        gro.click_group_promotion()
+        gro.click_combine_promotion()
         if len(gro.checkbox) > 1:
             gro.select_all()
             gro.del_all()

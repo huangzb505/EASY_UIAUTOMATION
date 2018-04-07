@@ -658,8 +658,8 @@ class PromotionManage(PublicPages):
         self.click(*MenuLoc.order_promotion)
         sleep(1)
 
-    def click_group_promotion(self):
-        self.click(*MenuLoc.group_promotion)
+    def click_combine_promotion(self):
+        self.click(*MenuLoc.combine_promotion)
         sleep(1)
 
     @property
